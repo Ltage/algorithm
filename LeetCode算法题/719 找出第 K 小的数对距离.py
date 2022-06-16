@@ -30,5 +30,4 @@ class Solution:
         return left
 
 
-print(Solution.smallestDistancePair([62, 100, 4],
-                                    2))
+print(Solution.smallestDistancePair([62, 100, 4], 2))
