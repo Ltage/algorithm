@@ -8,7 +8,8 @@ class Node:
         self.random = random
 """
 
-
+# 方法一
+# 利用数组记录random
 class Solution:
     def copyRandomList(self, head: 'Node') -> 'Node':
         # 空节点直接返回
@@ -63,4 +64,25 @@ class Solution:
 
         return root
 
-
+# 方法二
+# 复制链表的方式
+# class Solution:
+#     def copyRandomList(self, head: 'Node') -> 'Node':
+#         if not head:
+#             return None
+#         cur = head
+#         while cur:
+#             temp = cur.next
+#             cur.next = Node(cur.val, temp)
+#             cur = temp
+#         cur = head
+#         while cur:
+#             cur.next.random = cur.random.next if cur.random else None
+#             cur = cur.next.next
+#         ans = head.next
+#         cur = head
+#         while cur.next:
+#             temp = cur.next
+#             cur.next = cur.next.next
+#             cur = temp
+#         return ans
